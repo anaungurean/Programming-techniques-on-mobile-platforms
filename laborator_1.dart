@@ -43,7 +43,7 @@ exercise3(var text) {
   // The numbers can be double or int. The program will return the sum of the extracted numbers.
 
   double sum = 0;
-    List<String> punctuationMarks = [',', '.', ';', '?', '!'];
+  List<String> punctuationMarks = [',', ';', '?', '!'];
 
   for (var mark in punctuationMarks) {
     text = text.replaceAll(mark, ' ');
@@ -51,8 +51,13 @@ exercise3(var text) {
   var words = text.split(" ");
 
   for (var word in words) {
+    if (word.endsWith(".")) {
+      word = word.substring(0, word.length - 1);
+    }
+    print(word);
     if (double.tryParse(word) != null) {
-      sum += double.parse(word).round();
+      print("Number: $word");
+      sum += double.parse(word);
     }
   }
   print("The sum of the numbers is: $sum");
@@ -63,7 +68,7 @@ exercise4(var s) {
   // 4. Write a dart function that converts a string of characters written in UpperCamelCase into lowercase_with_underscore.
   var result = "";
   result += s[0].toLowerCase();
-  
+
   for (var i = 1; i < s.length; i++) {
     if (s[i] == s[i].toUpperCase()) {
       result += "_";
@@ -74,10 +79,11 @@ exercise4(var s) {
   }
   print(result);
 }
+
 void main() {
   exercise1();
   exercise2("Hello, World! I am Ana. I am 21 years old. How are you?");
-  exercise3("Hello, World! I am Ana. I am 21 years old and I have been studying computer science for 3 years. How are you?");
+  exercise3(
+      "Hello, World! I am Ana. I am 21 years old and I have been studying computer science for 3.3 years 2.1883. How are you?");
   exercise4("HelloWorld");
-
 }
