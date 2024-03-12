@@ -4,32 +4,21 @@
 void main() {
   int n = 13;
   var groups = <int, int>{};
-  int max = 0;
-  int k = 0;
+  int maxCount = 0;
+  int groupCount = 0;
 
   for (int i = 1; i <= n; i++) {
-    int sum = 0;
-    int number = i;
+    int sum = i.toString().split('').map(int.parse).reduce((a, b) => a + b);
 
-    while (number > 0) {
-      sum += number % 10;
-      number = number ~/ 10;
-    }
+    groups[sum] = (groups[sum] ?? 0) + 1;
 
-    if (groups.containsKey(sum)) {
-      groups[sum] = groups[sum]! + 1;
-    } else {
-      groups[sum] = 1;
-    }
-
-    if (groups[sum]! > max) {
-      max = groups[sum]!;
-      k = 1;
-    } else if (groups[sum] == max) {
-      k = k + 1;
+    if (groups[sum]! > maxCount) {
+      maxCount = groups[sum]!;
+      groupCount = 1;
+    } else if (groups[sum] == maxCount) {
+      groupCount++;
     }
   }
 
-  print(k);
+  print(groupCount);
 }
-
