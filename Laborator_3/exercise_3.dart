@@ -13,13 +13,11 @@
 
 // e) Create a small test program (main)
 
-
 class Client {
   String _name;
-  double _purchasesAmount;
+  double _purchasesAmount = 0;
 
-  Client(this._name, this._purchasesAmount);
-
+  Client(this._name);
   double getPurchasesAmount() {
     return _purchasesAmount;
   }
@@ -30,7 +28,7 @@ class Client {
 }
 
 class LoyalClient extends Client {
-  LoyalClient(String name, double purchasesAmount) : super(name, purchasesAmount);
+  LoyalClient(String name) : super(name);
 
   double getPurchasesAmountLoyal() {
     return super.getPurchasesAmount();
@@ -42,12 +40,13 @@ class LoyalClient extends Client {
 }
 
 void main() {
-  Client client = Client('John', 100);
+  Client client = Client('Ana');
+  client.add(100);
   print(client.getPurchasesAmount());
   client.add(50);
   print(client.getPurchasesAmount());
 
-  LoyalClient loyalClient = LoyalClient('John', 100);
+  LoyalClient loyalClient = LoyalClient('Ana-Maria');
   print(loyalClient.getPurchasesAmountLoyal());
   loyalClient.add(50);
   print(loyalClient.getPurchasesAmountLoyal());

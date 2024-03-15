@@ -28,7 +28,6 @@ void main(List<String> arguments) {
 
   try {
     List<int> number = arguments.map((arguments) => int.parse(arguments)).toList();
-    print('List for the number: $number');
     for (int i = number.length - 1; i >= 0; i--) {
       if (number[i] == 9) {
         number[i] = 0;

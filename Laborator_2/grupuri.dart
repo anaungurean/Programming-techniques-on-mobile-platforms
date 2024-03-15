@@ -2,8 +2,8 @@
 // Sa se returneze numarul de grupuri care au cele mai multe numere.
 
 void main() {
-  int n = 13;
-  var groups = <int, int>{};
+  int n = 30;
+  var groups = <int, int>{}; 
   int maxCount = 0;
   int groupCount = 0;
 

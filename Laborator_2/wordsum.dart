@@ -52,13 +52,8 @@ void main(List<String> arguments) {
     }
     if (index % 2 == 0) {
       s[argument] = int.parse(arguments[index + 1]);
-      print(s[argument]);
     }
     index++;
-  }
-
-  for (var key in s.keys) {
-    print('Letter: $key, Number: ${s[key]}');
   }
 
   int sum = 0;
