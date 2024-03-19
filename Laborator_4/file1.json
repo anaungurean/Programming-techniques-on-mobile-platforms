@@ -1,0 +1,8 @@
+{
+  "nume": "Ana",
+  "varsta": 21,
+  "oras": "Iasi",
+  "tara": "Romania",
+  "hobbies": ["reading", "hiking"]
+
+}

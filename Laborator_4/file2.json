@@ -1,0 +1,7 @@
+{
+  "nume": "Cosmin",
+  "varsta": 20,
+  "tara": "USA",
+  "job": "Engineer",
+  "skills": ["programming", "problem solving"]
+}
